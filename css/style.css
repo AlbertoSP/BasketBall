@@ -1,0 +1,15 @@
+.gameContainer {
+    width: 606px;
+    height: 729px;
+    margin: 0 auto;
+    background-color: black;
+    border: 1px solid red
+}
+
+.paleta {
+    width: 117px;
+    height: 13px;
+    background-color: red;
+    position: relative;
+  
+}
