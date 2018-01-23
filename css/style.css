@@ -3,29 +3,28 @@
     height: 729px;
     margin: 0 auto;
     background-color: black;
-    border: 1px solid #ff0000
-    
+    border: 1px solid #ff0000;
+    position:relative;
 }
 
 .paleta {
     width: 117px;
     height: 13px;
     background-color: red;
-    position: relative;
+    position: absolute;
   
 }
 .muro{
     width: 117px;
     height: 50px;
     background-color: green;
-    position: relative;
-  
+    position: absolute;
 }
 .canasta{
     width: 30px;
     height: 30px;
     background-color: yellow;
-    
+    position: absolute;
 }
 .muro2{
     width: 117px;

@@ -6,10 +6,13 @@ $(document).ready(function () {
         miPaleta.move(e)
     });
     $(document).ready(function () {
-        var miMuro1 = new Muro(20, 100, 10);
-       
+        var miMuro1 = new Muro(20, 100, 2);
+       var miMuro2 = new Muro(20, 300, 3);
+       var miMuro3 = new Muro(20, 520, 4);
         setInterval(function () {
             miMuro1.move();
+            miMuro2.move();
+            miMuro3.move();
             //ejecutar ua funcion un número de veces
         }, 10);
     });
