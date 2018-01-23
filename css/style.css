@@ -3,7 +3,8 @@
     height: 729px;
     margin: 0 auto;
     background-color: black;
-    border: 1px solid red
+    border: 1px solid #ff0000
+    
 }
 
 .paleta {
@@ -19,4 +20,16 @@
     background-color: green;
     position: relative;
   
+}
+.canasta{
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    
+}
+.muro2{
+    width: 117px;
+    height: 50px;
+    background-color: green;
+    position: relative;
 }

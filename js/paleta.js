@@ -16,15 +16,15 @@ Paleta.prototype.move= function(e){
     console.log(this.positionTop);
     switch (e.keyCode) {
         case 37: // left
-        this.positionLeft -= 5;
+        this.positionLeft -= 10;
           if (this.positionLeft < 0) {
-            this.positionLeft = 10;
+            this.positionLeft = 0;
           }
           break;
         case 39: // right
-        this.positionLeft += 5;
+        this.positionLeft += 10;
           if (this.positionLeft > 490) {
-            this.positionLeft = 480;
+            this.positionLeft = 490;
           }
           break;
         default:
@@ -33,6 +33,6 @@ Paleta.prototype.move= function(e){
       this.update();
 }
 Paleta.prototype.update = function() {
-    $(paleta).css({"top": this.positionTop,"left": this.positionLeft});
+  $(paleta).css({"top": this.positionTop,"left": this.positionLeft});
 }
 
