@@ -1,37 +1,44 @@
-function Paleta() {
- this.positionTop= 670;
-this.positionLeft= 250;
+function Paleta(x, y) {
+  this.x = x;
+  this.y = y;
 }
 
 var paleta;
 
 Paleta.prototype.drawPaleta = function () {
-    paleta = document.createElement('div')
-    $(".gameContainer").append(paleta);
-    $(paleta).addClass("paleta");
-    $(paleta).css({"top": this.positionTop,"left": this.positionLeft});
+  paleta = document.createElement('div')
+  $(".gameContainer").append(paleta);
+  $(paleta).addClass("paleta");
+  $(paleta).css({
+    "top": this.y,
+    "left": this.x
+  });
 }
-Paleta.prototype.move= function(e){
-  
-    switch (e.keyCode) {
-        case 37: // left
-        this.positionLeft -= 10;
-          if (this.positionLeft < 0) {
-            this.positionLeft = 0;
-          }
-          break;
-        case 39: // right
-        this.positionLeft += 10;
-          if (this.positionLeft > 490) {
-            this.positionLeft = 490;
-          }
-          break;
-        default:
-          return; // exit this handler for other keys
-      }
-      this.update();
-}
-Paleta.prototype.update = function() {
-  $(paleta).css({"top": this.positionTop,"left": this.positionLeft});
-}
+Paleta.prototype.move = function (direction) {
 
+  switch (direction.keyCode) {
+    //Left
+    case 37:
+      
+      if (this.x > 0) {
+        this.x -= 10;
+      }
+      break;
+    //Rigth
+    case 39:
+      
+      if (this.x < 490) {
+        this.x += 10;
+      }
+      break;
+    default:
+      return; // exit this handler for other keys
+  }
+  this.update();
+}
+Paleta.prototype.update = function () {
+  $(paleta).css({
+    "top": this.y,
+    "left": this.x
+  });
+}

@@ -1,14 +1,22 @@
+
 $(document).ready(function () {
-    var miPaleta = new Paleta();
+    var miPaleta = new Paleta(250, 700);
+    var ball = new Actor(miPaleta.x + 50, miPaleta.y - 20, 0, 10);
+    
+    var miCanasta = new Canasta();
+    var miMuro1 = new Muro(20, 100, 2);
+    var miMuro2 = new Muro(20, 300, 3);
+    var miMuro3 = new Muro(20, 520, 4);
+
     miPaleta.drawPaleta();
+    miCanasta.drawCanasta(20, 295);
 
     $(document).keydown(function (e) {
         miPaleta.move(e)
+        ball.ball(e)
+        
     });
-    $(document).ready(function () {
-        var miMuro1 = new Muro(20, 100, 2);
-       var miMuro2 = new Muro(20, 300, 3);
-       var miMuro3 = new Muro(20, 520, 4);
+
         setInterval(function () {
             miMuro1.move();
             miMuro2.move();
@@ -16,12 +24,12 @@ $(document).ready(function () {
             //ejecutar ua funcion un número de veces
         }, 10);
     });
-    $(document).ready(function () {
-        var miCanasta = new Canasta();
-        miCanasta.drawCanasta(20, 295);
-    });
-    $(document).ready(function () {
-        var miPelota = new Pelota(305, 650);
+
         
-    });
-});
+
+
+
+
+           
+    
+    
