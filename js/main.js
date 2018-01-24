@@ -18,11 +18,10 @@ $(document).ready(function () {
     });
     $(document).ready(function () {
         var miCanasta = new Canasta();
-        miCanasta.drawCanasta(20, 300);
+        miCanasta.drawCanasta(20, 295);
     });
-
-
-
-
-
+    $(document).ready(function () {
+        var miPelota = new Pelota(305, 650);
+        
+    });
 });

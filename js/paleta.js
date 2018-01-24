@@ -12,8 +12,7 @@ Paleta.prototype.drawPaleta = function () {
     $(paleta).css({"top": this.positionTop,"left": this.positionLeft});
 }
 Paleta.prototype.move= function(e){
-    console.log(e.keyCode);
-    console.log(this.positionTop);
+  
     switch (e.keyCode) {
         case 37: // left
         this.positionLeft -= 10;
