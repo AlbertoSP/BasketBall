@@ -3,6 +3,9 @@ function Actor(x, y, sX, sY) {
     this.y = y;
     this.speedX = sX;
     this.speedY = sY;
+    this.press = false;
+
+
     this.element = $('<div>').addClass("ball");
     this.element.css({
         top: this.y,
@@ -11,30 +14,51 @@ function Actor(x, y, sX, sY) {
     });
     $(".gameContainer").append(this.element);
 }
+Actor.prototype.update = function () {
+    //  this.y -= 10;
+
+    if (this.x >= $(".gameContainer").width() || this.x <= 0) {
+        this.speedX *= -1;
+    }
+    if (this.y >= $(".gameContainer").height() || this.y <= 0) {
+        this.speedY *= -1;
+    }
+    if (this.press) {
+        this.x += this.speedX;
+        this.y += this.speedY;
+    }
+
+    this.element.css({
+        top: this.y,
+        left: this.x,
+        position: 'absolute'
+    });
+}
+var ball = new Actor(500, 50, 0, 10);
+setInterval(function () {
+    ball.update();
+}, 10);
+
 Actor.prototype.ball = function (direction) {
-    switch (direction.keyCode) {
-        //Left
-        case 37:
-
-            if (this.x > 0) {
+    switch (direction) {
+        case 'left':
+            if (this.x > 0)
                 this.x -= 10;
-            }
             break;
-            //Rigth
-        case 39:
-
-            if (this.x < 490) {
+        case 'right':
+            if (this.x < $(".gameContainer").width() - 20)
                 this.x += 10;
-            }
             break;
-        default:
-            return; // exit this handler for other keys
     }
     this.render();
 }
 Actor.prototype.render = function () {
     $(".ball").css({
-      "top": this.y,
-      "left": this.x
+        "top": this.y,
+        "left": this.x
     });
-  }
+}
+Actor.prototype.cambioDireccion = function () {
+    console.log(this)
+         this.speedY*= -1;
+    }
