@@ -1,3 +1,7 @@
+window.onload = function() {
+    document.getElementById("start-button").onclick = function(){
+            $(".container").css("display","none")}
+}
 $(document).ready(function () {
     var miPaleta = new Paleta(250, 700);
     var ball = new Actor(miPaleta.x + 50, miPaleta.y - 20, 0, -10);
@@ -12,8 +16,9 @@ $(document).ready(function () {
 
     miPaleta.drawPaleta();
     miCanasta.drawCanasta(20, 295);
-
+    var lanzada = true;
     $(document).keydown(function (e) {
+    
         switch (e.keyCode) {
             case 37:
                 miPaleta.move('left')
@@ -22,6 +27,7 @@ $(document).ready(function () {
                 miPaleta.move('right')
                 break;
         }
+        if(lanzada){
         switch (e.keyCode) {
             case 37:
                 ball.ball('left')
@@ -31,8 +37,10 @@ $(document).ready(function () {
                 break;
             case 32:
                 ball.press = true;
+                lanzada = false;
 
         }
+    }
 
   
     });
@@ -43,6 +51,7 @@ $(document).ready(function () {
         miMuro2.move();
         miMuro3.move();
         checkCollisions(ball)
+        miCanasta.checkContador();
         // var colliders_selector = ".ball";
         // var obstacles_selector = ".muro";
     }, 10);
@@ -52,9 +61,13 @@ $(document).ready(function () {
         var muros = $('.muro')
         var ball = $('.ball')
         var paletaCol = $('.paleta')
+        var canastaCol = $(".canasta")
+        var collisionCanasta = canastaCol.collision(ball);
         var collisionMuroBall = muros.collision(ball)
         var collisionPaleta = paletaCol.collision(ball)
-        
+        if(collisionCanasta[0]){
+            miCanasta.puntos = miCanasta.puntos + 1
+        }
        if(collisionMuroBall[0] || collisionPaleta[0]){
          ballObject.cambioDireccion();
        }

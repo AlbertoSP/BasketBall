@@ -20,8 +20,12 @@ Actor.prototype.update = function () {
     if (this.x >= $(".gameContainer").width() || this.x <= 0) {
         this.speedX *= -1;
     }
-    if (this.y >= $(".gameContainer").height() || this.y <= 0) {
+    if ( this.y <= 0) {
+        
         this.speedY *= -1;
+    }
+    if(this.y >= $(".gameContainer").height()){
+        alert("GAME OVER")
     }
     if (this.press) {
         this.x += this.speedX;
