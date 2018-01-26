@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
     miPaleta.drawPaleta();
-    miCanasta.drawCanasta(20, 295);
+    miCanasta.drawCanasta(0, 285);
     var lanzada = true;
     $(document).keydown(function (e) {
     
