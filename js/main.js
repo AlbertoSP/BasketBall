@@ -4,7 +4,7 @@ window.onload = function() {
 }
 $(document).ready(function () {
     var miPaleta = new Paleta(250, 700);
-    var ball = new Actor(miPaleta.x + 50, miPaleta.y - 20, 0, -10);
+    var ball = new Actor(miPaleta.x + 50, miPaleta.y - 20, 0, -5);
 
     var miCanasta = new Canasta();
     var miMuro1 = new Muro(20, 100, 2);
