@@ -55,5 +55,24 @@
     height: 100%;
     text-align: center;
     z-index: 10;
-    background: #fff;
+    background:url(https://c.wallhere.com/photos/40/97/NBA_basketball_Miami_Heat_Miami_sports-228404.jpg!d);
+}
+.img-basket{
+position: relative;
+top: 20px;
+left: 30px;
+width: 20px;
+height: 20px;
+
+}
+#start-button{
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 90px;
+    height: 60px;  
+    border-radius: 20%;
+    font-size: 30px;
+    background-color: antiquewhite;
+
 }
